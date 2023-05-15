@@ -27,4 +27,4 @@ report = MRI_QA_Reporter(gradient_harmonics=[G_x_harmonics, G_y_harmonics, G_z_h
                          B0_harmonics=B0_harmonics,
                          r_outer=150, dicom_data=dicom_data_loc)
 
-report.write_html_report(output_folder=report_dir)
+report.write_html_report(report_name='pre_correction_harmonics.html')
