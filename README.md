@@ -2,7 +2,7 @@
 
 This repository demonstrates the anaysis of a distortion phantom using the [mri_distortion_toolkit](https://github.com/ACRF-Image-X-Institute/mri_distortion_toolkit).
 
-The analysed was acquired on the australian MRI-Linac system, and can be downloaded [here](https://ses.library.usyd.edu.au/handle/2123/31139).
+The analysed data was acquired on the australian MRI-Linac system, and can be downloaded [here](https://ses.library.usyd.edu.au/handle/2123/31139).
 
 Upon downloading and unzipping the data, the first thing you should do is update the `dataloc` field in `_0_data_location.py`.
 This variable should point to `20221107 MR Linac^Test` inside the downloaded data.
