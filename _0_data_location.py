@@ -7,31 +7,37 @@ from zipfile import BadZipFile
 
 logging.basicConfig(level=logging.INFO)
 
-def download_and_extract_data():
+def download_and_extract_data(dataloc):
     """ Function to facilitate downloading and extracting the Phantom data
+
+    Args:
+        dataloc (pathlib.Path): Path to the directory where the data will be downloaded and extracted to
     """
     zipfile_path = Path("./")
     data_zip_url = "https://ses.library.usyd.edu.au/bitstream/handle/2123/31139/mri_distortion_phantom_images.zip?sequence=1&isAllowed=y"
     with zipfile_path as dir:
         zip_file = Path(dir).joinpath("data.zip")
 
-        logging.info("Downloading data zipfile...")
-        data = requests.get(data_zip_url)
+        if not dataloc.is_dir():
+            logging.info("Downloading data zipfile...")
+            data = requests.get(data_zip_url)
 
-        logging.info("Extracting data zipfile...")
-        with open(zip_file, 'wb') as out_file:
-            out_file.write(data.content)
-            try:
-                with zipfile.ZipFile(zip_file, 'r') as zip_ref:
-                    dir_to_extract_to = zipfile_path
-                    zip_ref.extractall(dir_to_extract_to)
-            except BadZipFile:
-                print("Cannot download data zipfile. Please confirm that the URL is valid.")
-                exit()
-        logging.info("Data ready!")
+            logging.info("Extracting data zipfile...")
+            with open(zip_file, 'wb') as out_file:
+                out_file.write(data.content)
+                try:
+                    with zipfile.ZipFile(zip_file, 'r') as zip_ref:
+                        dir_to_extract_to = zipfile_path
+                        zip_ref.extractall(dir_to_extract_to)
+                except BadZipFile:
+                    print("Cannot download data zipfile. Please confirm that the URL is valid.")
+                    exit()
+            logging.info("Data ready!")
+        else:
+            logging.info("Data already downloaded and extracted.")
 
-download_and_extract_data()
 dataloc = Path('./FrankenGoam^Mr/20221107 MR Linac^Test')
+download_and_extract_data(dataloc)
 if not dataloc.is_dir():
     raise NotADirectoryError(f'{dataloc} is not a directory')
 scans = {'0': '01 localiser_gre',
