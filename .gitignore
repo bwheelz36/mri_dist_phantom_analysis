@@ -162,6 +162,7 @@ cython_debug/
 # Data folder
 FrankenGoam^Mr
 data.zip
+_data
 
 # MacOS Store file
 .DS_Store

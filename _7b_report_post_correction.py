@@ -12,10 +12,10 @@ from pathlib import Path
 # extract markers uncorrected
 try:
     # use existing segmentation if it exists
-    volume = MarkerVolume(dataloc / scans['17'] / 'Original' / 'corrected_dcm' / 'slicer_centroids.mrk.json')
+    volume = MarkerVolume(dataloc / scans['17'] / 'Original' / 'corrected_dcm_3D_B0' / 'slicer_centroids.mrk.json')
 except FileNotFoundError:
     # otherwise resegment
-    volume = MarkerVolume(dataloc / scans['17'] / 'Original' / 'corrected_dcm',
+    volume = MarkerVolume(dataloc / scans['17'] / 'Original' / 'corrected_dcm_3D_B0',
                           n_markers_expected=609,
                           iterative_segmentation=True,
                           gaussian_image_filter_sd=.6)
