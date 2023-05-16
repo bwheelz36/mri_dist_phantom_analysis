@@ -6,8 +6,9 @@ The analysed data was acquired on the australian MRI-Linac system, and can be do
 
 If you execute the scripts in order (_1_, _2_, etc.), the data will be downloaded for you and the rest of the pipeline will be in correct order. For explanation of what exactly is happening at each step, you can read our [documentation](https://acrf-image-x-institute.github.io/mri_distortion_toolkit/examples.html)
 
-The only dependency you should need is `mri_distortion_toolkit`:
+The only dependency you should need is `mri_distortion_toolkit` and `requests`:
 
 ```commandline
 pip install mri_distortion_toolkit
+pip install requests
 ```
