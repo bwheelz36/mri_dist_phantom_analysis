@@ -8,7 +8,7 @@ from zipfile import BadZipFile
 logging.basicConfig(level=logging.INFO)
 
 def download_and_extract_data():
-    """ Function to facilitate downloading and extracting the Phatom data from data
+    """ Function to facilitate downloading and extracting the Phantom data
     """
     zipfile_path = Path("./")
     data_zip_url = "https://ses.library.usyd.edu.au/bitstream/handle/2123/31139/mri_distortion_phantom_images.zip?sequence=1&isAllowed=y"
