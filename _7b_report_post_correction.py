@@ -44,4 +44,4 @@ report_dir = user_home_dir / 'mri_qa_reports'
 if not report_dir.is_dir():
     report_dir.mkdir()
 report = MRI_QA_Reporter(MatchedMarkerVolume=rotated_match.MatchedCentroids, r_outer=150, dicom_data=volume.dicom_data)
-# report.write_html_report(report_name='post_correction_direct_data.html')
+report.write_html_report(report_name='post_correction_direct_data.html')

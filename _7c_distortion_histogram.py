@@ -118,18 +118,19 @@ elevation=28
 azimuth=117
 vmin = 0
 vmax = 4
-original_matched.plot_3D_markers_with_color_scale(cmap=plt.cm.viridis, elevation=elevation, azimuth=azimuth,
+cmap = plt.cm.jet
+original_matched.plot_3D_markers_with_color_scale(cmap=cmap, elevation=elevation, azimuth=azimuth,
                                                   vmin=vmin, vmax=vmax, title='No correction')
 original_matched.report()
-matched_2D.plot_3D_markers_with_color_scale(cmap=plt.cm.viridis, elevation=elevation, azimuth=azimuth,
+matched_2D.plot_3D_markers_with_color_scale(cmap=cmap, elevation=elevation, azimuth=azimuth,
                                             vmin=vmin, vmax=vmax, title='2D correction')
 matched_2D.report()
-matched_3D.plot_3D_markers_with_color_scale(cmap=plt.cm.viridis, elevation=elevation, azimuth=azimuth,
+matched_3D.plot_3D_markers_with_color_scale(cmap=cmap, elevation=elevation, azimuth=azimuth,
                                             vmin=vmin, vmax=vmax, title='3D correction')
 # matched_3D.report()
-matched_3D_B0.plot_3D_markers_with_color_scale(cmap=plt.cm.viridis, elevation=elevation, azimuth=azimuth,
+matched_3D_B0.plot_3D_markers_with_color_scale(cmap=cmap, elevation=elevation, azimuth=azimuth,
                                                vmin=vmin, vmax=vmax, title='3D correction with B0')
-matched_3D_B0_filtered.plot_3D_markers_with_color_scale(cmap=plt.cm.viridis, elevation=elevation, azimuth=azimuth,
+matched_3D_B0_filtered.plot_3D_markers_with_color_scale(cmap=cmap, elevation=elevation, azimuth=azimuth,
                                                         vmin=vmin, vmax=vmax, title='3D correction with B0 filtered')
 
 matched_3D_B0.report()
