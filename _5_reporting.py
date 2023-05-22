@@ -25,6 +25,7 @@ dicom_data_loc = dataloc / scans['9'] / 'Original' / 'dicom_data.json'  # this s
 
 report = MRI_QA_Reporter(gradient_harmonics=[G_x_harmonics, G_y_harmonics, G_z_harmonics],
                          B0_harmonics=B0_harmonics,
-                         r_outer=150, dicom_data=dicom_data_loc)
+                         r_outer=150, dicom_data=dicom_data_loc,
+                         style='light')
 
 report.write_html_report(report_name='pre_correction_harmonics.html')

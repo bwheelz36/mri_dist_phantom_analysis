@@ -1,13 +1,10 @@
 """
-produce a histogram of the three different cases of distortino correction
-also add no distortion correction!!
+produce scatter plots colored with distortion for different distortion correction techniques
 """
 
 from mri_distortion_toolkit.MarkerAnalysis import MarkerVolume, MatchedMarkerVolumes
 from _0_data_location import dataloc, scans
 from matplotlib import pyplot as plt
-
-
 from pathlib import Path
 
 
@@ -117,21 +114,43 @@ matched_3D_B0_filtered.MatchedCentroids = matched_3D_B0_filtered.MatchedCentroid
 elevation=28
 azimuth=117
 vmin = 0
-vmax = 4
-cmap = plt.cm.jet
+vmax = 6
+cmap = plt.cm.rainbow
+save_figs = True
+save_path = Path(r'C:\Users\Brendan\Dropbox (Sydney Uni)\abstracts,presentations etc\Publications\FirstAuthor\MRI_QA\Figures\different_correction_techniques')
+SMALL_SIZE = 10
+MEDIUM_SIZE = 14
+BIGGER_SIZE = 18
+
+plt.rc('font', size=SMALL_SIZE)          # controls default text sizes
+plt.rc('axes', titlesize=SMALL_SIZE)     # fontsize of the axes title
+plt.rc('axes', labelsize=MEDIUM_SIZE)    # fontsize of the x and y labels
+plt.rc('xtick', labelsize=SMALL_SIZE)    # fontsize of the tick labels
+plt.rc('ytick', labelsize=SMALL_SIZE)    # fontsize of the tick labels
+plt.rc('legend', fontsize=SMALL_SIZE)    # legend fontsize
+plt.rc('figure', titlesize=BIGGER_SIZE)  # fontsize of the figure title
+
+
+if save_figs:
+    assert save_path.is_dir()
 original_matched.plot_3D_markers_with_color_scale(cmap=cmap, elevation=elevation, azimuth=azimuth,
-                                                  vmin=vmin, vmax=vmax, title='No correction')
+                                                  vmin=vmin, vmax=vmax, title='a) No correction', return_axs=True)
+plt.savefig(save_path / 'no_correction.pdf')
 original_matched.report()
 matched_2D.plot_3D_markers_with_color_scale(cmap=cmap, elevation=elevation, azimuth=azimuth,
-                                            vmin=vmin, vmax=vmax, title='2D correction')
+                                            vmin=vmin, vmax=vmax, title='b) 2D correction',  return_axs=True)
+plt.savefig(save_path / '2D_correction.pdf')
 matched_2D.report()
 matched_3D.plot_3D_markers_with_color_scale(cmap=cmap, elevation=elevation, azimuth=azimuth,
-                                            vmin=vmin, vmax=vmax, title='3D correction')
-# matched_3D.report()
+                                            vmin=vmin, vmax=vmax, title='c) 3D correction',  return_axs=True)
+plt.savefig(save_path / '3D_correction.pdf')
+matched_3D.report()
 matched_3D_B0.plot_3D_markers_with_color_scale(cmap=cmap, elevation=elevation, azimuth=azimuth,
-                                               vmin=vmin, vmax=vmax, title='3D correction with B0')
+                                               vmin=vmin, vmax=vmax, title='D) 3D correction with B0',  return_axs=True)
+plt.savefig(save_path / '3D_B0_correction.pdf')
 matched_3D_B0_filtered.plot_3D_markers_with_color_scale(cmap=cmap, elevation=elevation, azimuth=azimuth,
-                                                        vmin=vmin, vmax=vmax, title='3D correction with B0 filtered')
-
+                                                        vmin=vmin, vmax=vmax, title='d) 3D correction with B0 filtered',
+                                                        return_axs=True)
+plt.savefig(save_path / '3D_B0_correction_filtered.pdf')
 matched_3D_B0.report()
 matched_3D_B0_filtered.report()
