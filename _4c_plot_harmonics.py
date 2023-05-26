@@ -8,8 +8,9 @@ from _0_data_location import data_csv_loc
 from pathlib import Path
 
 save_figs = True
-save_path = Path(r'C:\Users\Brendan\Dropbox (Sydney Uni)\abstracts,presentations etc\Publications\FirstAuthor\MRI_QA\Figures\harmonics')
-
+save_path = Path(r'C:\Users\bwhe3635\Dropbox (Sydney Uni)\abstracts,presentations etc\Publications\FirstAuthor\MRI_QA\Figures\harmonics')
+if save_figs:
+    assert save_path.is_dir()
 
 # Gx_Harmonics:
 G_x_data = pd.read_csv(data_csv_loc / 'Gx.csv', index_col=0).squeeze("columns")
