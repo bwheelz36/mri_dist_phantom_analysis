@@ -161,6 +161,7 @@ cython_debug/
 
 # Data folder
 FrankenGoam^Mr
+UQ PHANTOM^SHIMMING TEST
 data.zip
 _data
 

@@ -1,6 +1,8 @@
-from pathlib import Path
+"""
+Match all distorted markers to the ground truth data
+The matched marker datasets are saved to csv for future analysis
+"""
 from mri_distortion_toolkit.MarkerAnalysis import MarkerVolume, MatchedMarkerVolumes
-from mri_distortion_toolkit.utilities import enumerate_subfolders
 from _0_data_location import dataloc, scans
 
 

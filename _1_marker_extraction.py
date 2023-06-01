@@ -1,3 +1,10 @@
+"""
+Automatically extracts the markers positions from each scan.
+If the number of found markers is different from n_markers_expected, the software will warn you
+Once extracted the markers are saved to a json file using the `export_to_slicer` command. As the
+name implies, this file can be imported into slicer for further manipulation if required.
+"""
+
 from mri_distortion_toolkit.MarkerAnalysis import MarkerVolume
 from _0_data_location import dataloc, scans
 

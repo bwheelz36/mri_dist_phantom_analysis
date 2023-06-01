@@ -1,6 +1,11 @@
+"""
+Calculate the encoding fields from each set of matched markers.
+Because we provided the forward/ reverse gradient images in step _2_, here we get estimates of both gradients and
+B0 fields
+"""
+
 from mri_distortion_toolkit.FieldCalculation import ConvertMatchedMarkersToBz
 import pandas as pd
-from pathlib import Path
 from _0_data_location import dataloc, scans, data_csv_loc
 
 

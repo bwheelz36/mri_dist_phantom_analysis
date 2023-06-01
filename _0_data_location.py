@@ -1,4 +1,9 @@
-import os
+"""
+this script will download the data if it hasn't already been downloaded.
+It also provides a dictionary enumerating the data structure, which is used by
+downstream scripts to access the different folders
+"""
+
 import logging
 from pathlib import Path
 import requests

@@ -1,9 +1,11 @@
-import pandas as pd
-from pathlib import Path
-from mri_distortion_toolkit.Harmonics import SphericalHarmonicFit
-from _0_data_location import data_csv_loc
+"""
+In step _4_, we calculated harmonics for every field estimate. However, there are some field estimates we trust
+more than others (more on htis below).
+In this script, we combine and average our trusted estimates to produce the harmonics we will use in subequent steps.
 
-'''
+Trusted Harmonics
+-----------------
+
 for each gradient harmonic we should have 2 estimates we trust; 1 frequency and 1 phase
 this script takes the average of these two 'trusted estimates'
 
@@ -18,7 +20,11 @@ freq_encode_direction: y
 cor
 phase_encode_direction: x
 freq_encode_direction: z
-'''
+"""
+
+import pandas as pd
+from _0_data_location import data_csv_loc
+
 
 # Gx_Harmonics:
 G_x1 = pd.read_csv(data_csv_loc / 'G_x_Harmonics_tra.csv', index_col=0).squeeze("columns")

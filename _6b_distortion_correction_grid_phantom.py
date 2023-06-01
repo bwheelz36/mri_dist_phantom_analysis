@@ -14,7 +14,7 @@ from mri_distortion_toolkit.MarkerAnalysis import MarkerVolume
 from pathlib import Path
 from mri_distortion_toolkit.utilities import _get_MR_acquisition_data, dicom_to_numpy
 
-distorted_data_loc = Path(r'C:\Users\bwhe3635\cloudstor\MRI-Linac Experimental Data\UQ PHANTOM^SHIMMING TEST\20210520 QA^QA\03 t2_tse_tra_fullphantom_z axis long')
+distorted_data_loc = Path(r'UQ PHANTOM^SHIMMING TEST\20210520 QA^QA\03 t2_tse_tra_fullphantom_z axis long')
 
 
 InputVolume, dicom_affine, (X, Y, Z) = dicom_to_numpy(distorted_data_loc,
@@ -37,4 +37,6 @@ GDC = ImageDomainDistortionCorrector(ImageDirectory=distorted_data_loc.resolve()
 GDC.correct_all_images()
 save_loc = distorted_data_loc / 'corrected_dcm_3D_B0'
 GDC.save_all_images_as_dicom(save_loc=save_loc)  # saves as dicom which can be read into analysis packages.
-GDC.save_all_images()
+GDC.save_all_images(DSV_radius=150)
+
+

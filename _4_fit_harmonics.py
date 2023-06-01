@@ -1,3 +1,7 @@
+"""
+Fit spherical harmonics to each set of fields calcualted in step _3_
+"""
+
 from mri_distortion_toolkit import calculate_harmonics
 from pathlib import Path
 import pandas as pd
