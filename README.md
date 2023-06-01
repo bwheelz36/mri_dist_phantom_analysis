@@ -5,7 +5,7 @@ This repository demonstrates the anaysis of a distortion phantom using the [mri_
 The analysed data was acquired on the australian MRI-Linac system, and can be downloaded [here](https://ses.library.usyd.edu.au/handle/2123/31139).
 
 
-If you execute the scripts in order (_0_, _1_, _2_, etc.), the data will be downloaded for you and the rest of the pipeline will be in correct order. For explanation of what exactly is happening at each step, you can read our [documentation](https://acrf-image-x-institute.github.io/mri_distortion_toolkit/examples.html).
+If you execute the scripts in order (_0_, _1_, _2_, etc.), the data will be downloaded for you and the rest of the pipeline will be in correct order. A brief explation of what is happening is included at the start of each script. For mode detailed explanations, you can read our [documentation](https://acrf-image-x-institute.github.io/mri_distortion_toolkit/examples.html).
 
 The only dependency you should need is `mri_distortion_toolkit` and `requests`:
 
