@@ -1,5 +1,7 @@
 """
-produce scatter plots colored with distortion for different distortion correction techniques
+Finally, we generate more matched marker volumes to generate reports of the distortion
+post distortion correction in step _6_.
+This script also produces the colored scatter plots presente in the paper.
 """
 
 from mri_distortion_toolkit.MarkerAnalysis import MarkerVolume, MatchedMarkerVolumes

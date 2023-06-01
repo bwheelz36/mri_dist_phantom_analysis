@@ -1,6 +1,10 @@
 """
-in this script we will use the averaged harmonics to correct an independant dataset.
-we will correct the phantom after it had been rotated 90 degrees
+in this script we will use the averaged harmonics to correct the phantom after it had
+ been rotated 90 degrees. The rotation step serves to ensure that the marker positions
+ we are trying to correct are independant of the positioned we used to fit the harmonics.
+
+ The script is quite long because we demonstrate multiple correction cases: 2D only,
+ 3D, and 3D+B0
 """
 
 from _0_data_location import dataloc, scans

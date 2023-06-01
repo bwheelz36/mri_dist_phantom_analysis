@@ -1,16 +1,11 @@
 """
-this script demonstrates applying the distortion correction to a patient data set
-"""
+In this script, we instead apply the distortion correction to a grid phantom.
+The grid structure means it is much easier to visually assess distortion.
 
+THis data set is not included with the rest of the data as it was a seperate acquisition; it
+can be made available on request
 """
-in this script we will use the averaged harmonics to correct an independant dataset.
-we will correct the phantom after it had been rotated 90 degrees
-"""
-
-from _0_data_location import dataloc, scans
-from mri_distortion_toolkit.utilities import get_dicom_data
 from mri_distortion_toolkit.DistortionCorrection import ImageDomainDistortionCorrector
-from mri_distortion_toolkit.MarkerAnalysis import MarkerVolume
 from pathlib import Path
 from mri_distortion_toolkit.utilities import _get_MR_acquisition_data, dicom_to_numpy
 
